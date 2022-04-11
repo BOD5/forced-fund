@@ -175,6 +175,11 @@
   box-sizing: border-box;
 }
 
+.image-container {
+  max-height: 150px;
+  object-fit: cover;
+}
+
 article,
 aside,
 details,
@@ -10331,7 +10336,7 @@ div.btn-default.rounded-player.sm-size {
   display: inline-block;
   position: relative;
 }
-.counter-style-4 .count-number::after {
+.counter-style-4 .count-number.plus::after {
   content: "+";
 }
 .counter-style-4 .count-number span {
