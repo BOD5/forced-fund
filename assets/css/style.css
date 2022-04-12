@@ -6016,7 +6016,6 @@ xclip
       max-height: 45px; }
   .header-default .header-right {
     display: flex;
-    flex-wrap: wrap;
     align-items: center; }
   .header-default.header-relative {
     position: relative; }
@@ -6315,8 +6314,7 @@ xclip
   .header-top-bar .header-right {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    flex-wrap: wrap; }
+    justify-content: flex-end; }
     @media only screen and (min-width: 768px) and (max-width: 991px) {
       .header-top-bar .header-right {
         justify-content: center;
@@ -11107,4 +11105,6 @@ body.active-light-mode .slider-area.bg-transparent .inner button.btn-default.btn
   max-height: 150px;
   object-fit: cover; }
 
-/*# sourceMappingURL=style.css.map */
+.switcher {
+  text-align: center;
+  padding: 5px; }
