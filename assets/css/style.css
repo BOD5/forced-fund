@@ -11108,3 +11108,6 @@ body.active-light-mode .slider-area.bg-transparent .inner button.btn-default.btn
 .switcher {
   text-align: center;
   padding: 5px; }
+
+.logo-light, .logo-dark {
+  max-height: 70px !important; }
