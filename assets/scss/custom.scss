@@ -2,11 +2,46 @@
   max-height: 150px;
   object-fit: cover;
 }
-
 .switcher {
   text-align: center;
   padding: 5px;
 }
 .logo-light, .logo-dark {
   max-height: 70px !important;
+}
+
+.drop-down {
+  height: 100%;
+  margin-left: 10px;
+  padding-left: 5px;
+  ul {
+    list-style: none;
+  }
+  &__text {
+    color: var(--color-body);
+    font-weight: 500;
+    margin: 0px;
+    cursor: pointer;
+  }
+  &__menu {
+    position: absolute;
+    opacity: 0;
+    display: none;
+    transition: .3s;
+    padding: 0px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+  
+    li{
+      margin: 3px 5px;
+      a {
+        font-size: 16px;
+        color: white;
+      }
+    }
+  }
+}
+
+.active-dark-mode {
+
 }

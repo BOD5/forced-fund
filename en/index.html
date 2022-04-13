@@ -115,18 +115,14 @@
                   </li>
                 </ul>
               </div>
-              <!-- Start Switcher Area  -->
-              <!-- Language  -->
-              <nav class="mainmenu-nav d-none d-lg-block">
-                <ul class="mainmenu">
-                  <li class="has-droupdown has-menu-child-item"><a href="#">EN</a>
-                    <ul class="submenu">
-                      <li><a href="/">Українська</a></li>
-                    </ul>
-                  </li>
+              
+              <div class="drop-down" data-dropdown>
+                <p class="drop-down__text">EN</p>
+                <ul class="drop-down__menu" data-menu>
+                    <li><a href="/">UA</a></li>
                 </ul>
-              </nav>
-              <!-- Language  -->
+              </div>
+              
             </div>
           </div>
         </div>
@@ -182,7 +178,10 @@
         <div class="row align-items-center">
           <div class="col-lg-12">
             <div class="inner text-center">
-              <h1 class="title display-one">Forced Fund<br />
+              <h1 class="title display-one">
+                <div>
+                  Forced Fund<br />
+                </div>
                 <span class="header-caption">
                   <span class="cd-headline clip is-full-width">
                     <span class="cd-words-wrapper">
@@ -786,6 +785,7 @@
   <script src="../assets/js/vendor/jquery-one-page-nav.js"></script>
   <!-- Main JS -->
   <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/dropdown.js"></script>
 </body>
 
 </html>
