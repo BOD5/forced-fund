@@ -1,4 +1,5 @@
-(function (window, document, $, undefined) {
+// import jQuery from 'jquery'
+function start (window, document, undefined) {
     'use strict';
 
     var doobJs = {
@@ -91,7 +92,7 @@
 
 
         masonryActivation: function name(params) {
-            $(window).load(function () {
+            $(window).on('load',function () {
                 $('.masonary-wrapper-activation').imagesLoaded(function () {
                     // filter items on button click
                     $('.messonry-button').on('click', 'button', function () {
@@ -376,6 +377,6 @@
     }
     doobJs.i();
 
-})(window, document, jQuery)
+}
 
-
+start (window, document);

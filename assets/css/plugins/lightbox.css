@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'lg';
-    src: url("../../images/icons/lg.eot?n1z373");
-    src: url("../../images/icons/lg.eot?#iefixn1z373") format("embedded-opentype"), url("../../images/icons/lg.woff?n1z373") format("woff"), url("../../images/icons/lg.ttf?n1z373") format("truetype"), url("../fonts/lg.svg?n1z373#lg") format("svg");
+    src: url("../../images/icons/lg.eot");
+    src: url("../../images/icons/lg.eot") format("embedded-opentype"), url("../../images/icons/lg.woff") format("woff"), url("../../images/icons/lg.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
@@ -465,15 +465,15 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .lg-outer .lg-has-vimeo .lg-video-play {
-    background: url("../../images/icons/vimeo-play.png") no-repeat scroll 0 0 transparent;
+    /* background: url("../../images/icons/vimeo-play.png") no-repeat scroll 0 0 transparent; */
 }
 
 .lg-outer .lg-has-vimeo:hover .lg-video-play {
-    background: url("../../images/icons/vimeo-play.png") no-repeat scroll 0 -58px transparent;
+    /* background: url("../../images/icons/vimeo-play.png") no-repeat scroll 0 -58px transparent; */
 }
 
 .lg-outer .lg-has-html5 .lg-video-play {
-    background: transparent url("../../images/icons/video-play.png") no-repeat scroll 0 0;
+    /* background: transparent url("../../images/icons/video-play.png") no-repeat scroll 0 0; */
     height: 64px;
     margin-left: -32px;
     margin-top: -32px;
@@ -486,11 +486,11 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .lg-outer .lg-has-youtube .lg-video-play {
-    background: url("../../images/icons/youtube-play.png") no-repeat scroll 0 0 transparent;
+    /* background: url("../../images/icons/youtube-play.png") no-repeat scroll 0 0 transparent; */
 }
 
 .lg-outer .lg-has-youtube:hover .lg-video-play {
-    background: url("../../images/icons/youtube-play.png") no-repeat scroll 0 -60px transparent;
+    /* background: url("../../images/icons/youtube-play.png") no-repeat scroll 0 -60px transparent; */
 }
 
 .lg-outer .lg-video-object {
