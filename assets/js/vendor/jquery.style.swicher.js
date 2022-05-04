@@ -284,13 +284,12 @@ SOFTWARE.
             styleCookieVal = $('body').hasClass('active-dark-mode') ? 'dark' : 'light';
             Cookies.set('styleCookieName', styleCookieVal, { expires: 7 });
             // Cookies.set('styleCookieName', styleCookieVal);
-
         }
 
         if (Cookies.get('styleCookieName') == 'dark') {
             $('body').addClass('active-dark-mode');
         } else if(Cookies.get('styleCookieName') == 'light') {
-            // $('body').removeClass('active-light-mode');
+            $('body').removeClass('active-dark-mode');
         } else {
             // $('body').removeClass('active-light-mode');
         }
@@ -330,7 +329,6 @@ SOFTWARE.
             $('body').removeClass('active-dark-mode').addClass('active-light-mode');
             setStyleCookie();
         });
-
     });
 
 })(jQuery);
