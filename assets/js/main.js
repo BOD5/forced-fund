@@ -26,7 +26,6 @@
             doobJs.salActive();
             doobJs.popupMobileMenu();
             doobJs.masonryActivation();
-            doobJs.magnigyPopup();
             doobJs.lightBoxJs();
             doobJs.slickSliderActivation();
             doobJs.radialProgress();
@@ -79,16 +78,6 @@
                 cssEasing: 'linear'
             });
         },
-
-        magnigyPopup: function () {
-            $(document).on('ready', function () {
-                $('.popup-video').magnificPopup({
-                    type: 'iframe'
-                });
-            });
-        },
-        
-
 
         masonryActivation: function name(params) {
             $(window).load(function () {

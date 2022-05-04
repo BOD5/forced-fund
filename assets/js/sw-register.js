@@ -1,12 +1,20 @@
 if ('serviceWorker' in navigator) {
-  // Регистрация service worker-а, расположенного в корне сайта
-  // за счёт использования дефолтного scope (не указывая его)
-  navigator.serviceWorker.register('/pwabuilder-sw.js').then(function(registration) {
-    console.log('Service worker зарегистрирован:', registration);
-  }).catch(function(error) {
-    console.log('Ошибка при регистрации service worker-а:', error);
+  navigator.serviceWorker.register('/pwabuilder-sw.js')
+  .then(function(registration) {
+    registration.addEventListener('updatefound', function() {
+      // If updatefound is fired, it means that there's
+      // a new service worker being installed.
+      var installingWorker = registration.installing;
+      console.log('A new service worker is being installed:',
+        installingWorker);
+
+      // You can listen for changes to the installing service worker's
+      // state via installingWorker.onstatechange
+    });
+  })
+  .catch(function(error) {
+    console.log('Service worker registration failed:', error);
   });
 } else {
-  // Текущий браузер не поддерживает service worker-ы.
-  console.log('Текущий браузер не поддерживает service worker-ы');
+  console.log('Service workers are not supported.');
 }
