@@ -48,3 +48,13 @@ if ($name == "") {
     $msg['code'] = TRUE;
 }
 echo json_encode($msg);
+
+
+function tg($msg)
+{
+    $apiBase = 'https://api.telegram.org';
+    $bot = '5371573526:AAFOPtnaRn3HFj6BbKYo5JSpwLncNiy1m_A';
+    $chatId = '-619416108';
+
+    fopen("$apiBase/bot$bot/sendMessage?chat_id=$chatId&parse_mode=html&text=" . urlencode($msg), 'r');
+}
