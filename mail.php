@@ -32,7 +32,7 @@ if ($name == "") {
     $subject = 'Doob Contact Query';
     $_message = '<html><head></head><body>';
     $_message .= '<p>Name: ' . $name . '</p>';
-    $_message .= '<p>Message: ' . $phone . '</p>';
+    $_message .= '<p>Phone: ' . $phone . '</p>';
     $_message .= '<p>Email: ' . $email . '</p>';
     $_message .= '<p>Message: ' . $message . '</p>';
     $_message .= '</body></html>';
