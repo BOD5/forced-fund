@@ -48,6 +48,16 @@ if ($name == "") {
 
     mail($to, $subject, $_message, $headers, '-f nipabali@gmail.com');
 
+    // Telegram
+    $_messageTg = "New message from!\n\n";
+    $_messageTg .= "Name: $name\n";
+    $_messageTg .= "Phone: $phone\n";
+    $_messageTg .= "Email: $email\n";
+    $_messageTg .= "Subject: $subject\n";
+    $_messageTg .= "Message: $message";
+
+    tg($_messageTg);
+
     $msg['success'] = "\n Email has been sent successfully.";
     $msg['code'] = TRUE;
 }
