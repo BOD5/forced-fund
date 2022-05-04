@@ -179,6 +179,7 @@ SOFTWARE.
         },
 
         checkCookie: function() {
+            console.log(' - this:182 >', this); // eslint-disable-line no-console
             var styleCookie;
             // if using cookies and using JavaScript to load css
             if (this.config.cookie && this.config.cookie.isManagingLoad) {
@@ -289,9 +290,9 @@ SOFTWARE.
         if (Cookies.get('styleCookieName') == 'dark') {
             $('body').addClass('active-dark-mode');
         } else if(Cookies.get('styleCookieName') == 'light') {
-            $('body').removeClass('active-light-mode');
+            // $('body').removeClass('active-light-mode');
         } else {
-            $('body').removeClass('active-light-mode');
+            // $('body').removeClass('active-light-mode');
         }
 
         // Check Cookie
