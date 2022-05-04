@@ -18,7 +18,9 @@ div {
         border-color: transparent;
         border-radius: 8px;
         background-color: transparent;
-        background: linear-gradient(95deg, var(--color-primary) 15%, var(--color-tertiary) 45%, var(--color-pink) 75%, var(--color-secondary) 100%) 95% / 200% 100%;
+        background: linear-gradient(120deg, var(--color-primary) 0%, var(--color-tertiary) 32%, var(--color-yellow) 69%, var(--color-secondary) 100%);
+		background-position: 50% 50%;
+        background-size: 200% 200%;
         transition-duration: 300ms;
         color: var(--color-white);
         font-size: 16px;
@@ -46,10 +48,7 @@ div {
         }
 
         &:hover {
-            box-shadow: var(--shadow-primary);
-            -webkit-filter: brightness(125%);
-            filter: brightness(125%);
-            color: var(--color-white);
+            background-size: 150% 150%;
             text-decoration: none;
         }
 
@@ -228,7 +227,7 @@ div {
     z-index: 2;
     letter-spacing: 0.5px;
     &::before {
-        background: linear-gradient(95deg, var(--color-primary) 15%, var(--color-tertiary) 45%, var(--color-pink) 75%, var(--color-secondary) 100%) 95%/200% 100%;
+        background: linear-gradient(95deg, var(--color-primary) 15%, var(--color-tertiary) 45%, var(--color-yellow) 75%, var(--color-secondary) 100%) 95%/200% 100%;
         content: "";
         width: 100%;
         height: 100%;

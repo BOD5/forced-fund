@@ -295,7 +295,7 @@
                 }
             
                 @media #{$large-mobile} {
-                    font-size: 46px;
+                    font-size: 38px;
                 }
             }
         }
@@ -640,7 +640,7 @@
                 content: "";
                 width: 120px;
                 height: 2px;
-                background: var(--color-pink);
+                background: var(--color-yellow);
                 left: 100%;
                 top: 50%;
                 transform: translateY(-50%);

@@ -82,21 +82,21 @@
 /*-- Variables --*/
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
 :root {
-  --color-primary: #059DFF;
+  --color-primary: #0053d1;
   --color-primary-rgba: rgb(5, 157, 255);
   --color-primary-alt: #059DFF;
   --color-primary-light: #059DFF;
   --color-primary-lightest: #059DFF;
-  --color-secondary: #FB5343;
-  --color-tertiary: #6549D5;
-  --color-tertiary-alt: #6549D5;
-  --color-pink: #E33FA1;
+  --color-secondary: #FFC700;
+  --color-tertiary: #2040f2;
+  --color-tertiary-alt: #408cff;
+  --color-yellow: #fcf222;
   --color-light-green: #36C6F0;
   --color-primary-darker: #011827;
   --color-tertiary-darker: #150b40;
   --color-secondary-darker: #190301;
   --color-light-green-darker: #001f27;
-  --color-pink-darker: #2f011d;
+  --color-yellow-darker: #ffc700;
   --color-heading: #ffffff;
   --color-body: #acacac;
   --color-dark: #060606;
@@ -142,7 +142,7 @@
   --p-bold: 700;
   --p-extra-bold: 800;
   --p-black: 900;
-  --shadow-primary: 0 0 20px 5px rgba(251,83,67,0.2);
+  --shadow-primary: 0 0 20px 5px rgba(var(--color-primary),0.2);
   --shadow-light: 1px 1px 6px rgba(0,0,0,0.25);
   --shadow-lighter: 4px 4px 20px 20px rgba(0,0,0,0.01);
   --transition: 0.3s;
@@ -800,7 +800,7 @@ All Extend Here
   color: var(--color-light-green) !important; }
 
 .color-pink {
-  color: var(--color-pink) !important; }
+  color: var(--color-yellow) !important; }
 
 .color-primary-darker {
   color: var(--color-primary-darker) !important; }
@@ -812,7 +812,7 @@ All Extend Here
   color: var(--color-light-green-darker) !important; }
 
 .color-pink-darker {
-  color: var(--color-pink-darker) !important; }
+  color: var(--color-yellow-darker) !important; }
 
 .color-heading {
   color: var(--color-heading) !important; }
@@ -4947,11 +4947,22 @@ textarea:-ms-input-placeholder {
 ==========================*/
 /* Theme Gradient */
 .theme-gradient, .counter-style-1 .count-number {
-  background: linear-gradient(95deg, var(--color-primary) 15%, var(--color-tertiary) 45%, var(--color-pink) 75%, var(--color-secondary) 100%) 98%/200% 100%;
+  background: linear-gradient(120deg, var(--color-primary) 0%, var(--color-tertiary) 32%, var(--color-yellow) 69%, var(--color-secondary) 100%);
   text-transform: capitalize;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent; }
+  .theme-gradient_animation {
+    background-size: 200% 200%;
+    animation: gradient 15s ease infinite; }
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
 
 .bg-theme-gradient {
   background-color: transparent;
@@ -5013,7 +5024,7 @@ textarea:-ms-input-placeholder {
   background-color: var(--color-light-green) !important; }
 
 .bg-color-pink {
-  background-color: var(--color-pink) !important; }
+  background-color: var(--color-yellow) !important; }
 
 .bg-color-primary-darker {
   background-color: var(--color-primary-darker) !important; }
@@ -5025,7 +5036,7 @@ textarea:-ms-input-placeholder {
   background-color: var(--color-light-green-darker) !important; }
 
 .bg-color-pink-darker {
-  background-color: var(--color-pink-darker) !important; }
+  background-color: var(--color-yellow-darker) !important; }
 
 .bg-color-heading {
   background-color: var(--color-heading) !important; }
@@ -6653,7 +6664,9 @@ div.btn-default {
   border-color: transparent;
   border-radius: 8px;
   background-color: transparent;
-  background: linear-gradient(95deg, var(--color-primary) 15%, var(--color-tertiary) 45%, var(--color-pink) 75%, var(--color-secondary) 100%) 95%/200% 100%;
+  background: linear-gradient(120deg, var(--color-primary) 0%, var(--color-tertiary) 32%, var(--color-yellow) 69%, var(--color-secondary) 100%);
+  background-position: 50% 50%;
+  background-size: 200% 200%;
   transition-duration: 300ms;
   color: var(--color-white);
   font-size: 16px;
@@ -6681,10 +6694,7 @@ div.btn-default {
   a.btn-default:hover,
   button.btn-default:hover,
   div.btn-default:hover {
-    box-shadow: var(--shadow-primary);
-    -webkit-filter: brightness(125%);
-    filter: brightness(125%);
-    color: var(--color-white);
+    background-size: 150% 150%;
     text-decoration: none; }
   a.btn-default.btn-small,
   button.btn-default.btn-small,
@@ -6860,7 +6870,7 @@ div.btn-default {
   z-index: 2;
   letter-spacing: 0.5px; }
   .rn-badge-card::before {
-    background: linear-gradient(95deg, var(--color-primary) 15%, var(--color-tertiary) 45%, var(--color-pink) 75%, var(--color-secondary) 100%) 95%/200% 100%;
+    background: linear-gradient(95deg, var(--color-primary) 15%, var(--color-tertiary) 45%, var(--color-yellow) 75%, var(--color-secondary) 100%) 95%/200% 100%;
     content: "";
     width: 100%;
     height: 100%;
@@ -7054,7 +7064,7 @@ div.btn-default {
   color: var(--color-tertiary); }
 
 .service-wrapper > [class*=col]:nth-child(4) .service.service__style--1 .icon {
-  color: var(--color-pink); }
+  color: var(--color-yellow); }
 
 .service-wrapper > [class*=col]:nth-child(5) .service.service__style--1 .icon {
   color: var(--color-primary); }
@@ -7069,7 +7079,7 @@ div.btn-default {
   background-color: var(--color-tertiary-darker); }
 
 .service-wrapper > [class*=col]:nth-child(4) .service.service__style--1.icon-circle-style .icon {
-  background-color: var(--color-pink-darker); }
+  background-color: var(--color-yellow-darker); }
 
 .service-wrapper > [class*=col]:nth-child(5) .service.service__style--1.icon-circle-style .icon {
   background-color: var(--color-primary-darker); }
@@ -7226,7 +7236,7 @@ div.btn-default {
     .progress .progress-bar.bar-color-4 {
       background: #6549D5; }
     .progress .progress-bar.bar-gradiand {
-      background: radial-gradient(circle farthest-corner at 0% 0%, var(--color-pink) 25%, var(--color-secondary) 45%, var(--color-primary) 65%, var(--color-light-green) 85%); }
+      background: radial-gradient(circle farthest-corner at 0% 0%, var(--color-yellow) 25%, var(--color-secondary) 45%, var(--color-primary) 65%, var(--color-light-green) 85%); }
   .progress .progress-number {
     position: absolute;
     font-size: 14px;
@@ -7436,7 +7446,7 @@ div.btn-default {
     .social-default.transparent-with-border li a::after {
       border: 1px solid var(--color-primary); }
   .social-default.with-gradient li a::after {
-    background: linear-gradient(95deg, var(--color-primary) 15%, var(--color-tertiary) 45%, var(--color-pink) 75%, var(--color-secondary) 100%) 95%/200% 100%; }
+    background: linear-gradient(95deg, var(--color-primary) 15%, var(--color-tertiary) 45%, var(--color-yellow) 75%, var(--color-secondary) 100%) 95%/200% 100%; }
   .social-default.with-bg-primary li a {
     background-color: var(--color-primary);
     border: 2px solid var(--color-primary);
@@ -7522,7 +7532,7 @@ div.btn-default {
       color: var(--color-body); }
   .rn-box-card.border-gradient .thumbnail,
   .team-style-default.border-gradient .thumbnail {
-    background: linear-gradient(95deg, var(--color-primary) 15%, var(--color-tertiary) 45%, var(--color-pink) 75%, var(--color-secondary) 100%) 98%/200% 100%;
+    background: linear-gradient(95deg, var(--color-primary) 15%, var(--color-tertiary) 45%, var(--color-yellow) 75%, var(--color-secondary) 100%) 98%/200% 100%;
     padding: 5px;
     border: 0 none; }
   .rn-box-card.style-two,
@@ -7837,7 +7847,7 @@ div.btn-default {
     font-style: italic; }
 
 .testimonial-style-two .thumbnail {
-  background: linear-gradient(95deg, var(--color-primary) 15%, var(--color-tertiary) 45%, var(--color-pink) 75%, var(--color-secondary) 100%) 98%/200% 100%;
+  background: linear-gradient(95deg, var(--color-primary) 15%, var(--color-tertiary) 45%, var(--color-yellow) 75%, var(--color-secondary) 100%) 98%/200% 100%;
   border-radius: 100%;
   padding: 10px; }
   .testimonial-style-two .thumbnail img {
@@ -8136,7 +8146,7 @@ Timeline Area
         text-align: center;
         white-space: nowrap;
         transition: width .6s ease;
-        background-image: radial-gradient(circle farthest-corner at 0%, var(--color-pink) 25%, var(--color-secondary) 45%, var(--color-primary-light) 65%, var(--color-light-green) 85%);
+        background-image: radial-gradient(circle farthest-corner at 0%, var(--color-yellow) 25%, var(--color-secondary) 45%, var(--color-primary-light) 65%, var(--color-light-green) 85%);
         background-attachment: fixed;
         background-repeat: repeat-y;
         width: 100%;
@@ -10132,7 +10142,7 @@ iframe {
       font-size: 65px; } }
   @media only screen and (max-width: 575px) {
     .slider-style-1 .inner .header-caption span {
-      font-size: 46px; } }
+      font-size: 38px; } }
 
 .slider-style-1.variation-2 {
   position: relative; }
@@ -10369,7 +10379,7 @@ iframe {
     content: "";
     width: 120px;
     height: 2px;
-    background: var(--color-pink);
+    background: var(--color-yellow);
     left: 100%;
     top: 50%;
     transform: translateY(-50%); }

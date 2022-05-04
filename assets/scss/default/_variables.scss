@@ -1,15 +1,15 @@
 /*-- Variables --*/
 :root {
     //Themes colors
-    --color-primary: #059DFF;
+    --color-primary: #0053d1;
     --color-primary-rgba: rgb(5, 157, 255);
     --color-primary-alt: #059DFF;
     --color-primary-light: #059DFF;
     --color-primary-lightest: #059DFF;
-    --color-secondary: #FB5343;
-    --color-tertiary: #6549D5;
-    --color-tertiary-alt: #6549D5;
-    --color-pink: #E33FA1;
+    --color-secondary: #FFC700;
+    --color-tertiary: #2040f2;
+    --color-tertiary-alt: #408cff;
+    --color-yellow: #fcf222;
     --color-light-green: #36C6F0;
 
 
@@ -18,7 +18,7 @@
     --color-tertiary-darker: #150b40;
     --color-secondary-darker: #190301;
     --color-light-green-darker: #001f27;
-    --color-pink-darker: #2f011d;
+    --color-yellow-darker: #ffc700;
     
     // Typo Color 
     --color-heading: #ffffff;
@@ -96,7 +96,7 @@
 
 
     //Shadows
-    --shadow-primary: 0 0 20px 5px rgba(251,83,67,0.2);
+    --shadow-primary: 0 0 20px 5px rgba(var(--color-primary),0.2);
     --shadow-light: 1px 1px 6px rgba(0,0,0,0.25);
     --shadow-lighter: 4px 4px 20px 20px rgba(0,0,0,0.01);
 

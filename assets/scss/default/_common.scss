@@ -4,11 +4,26 @@
 
 /* Theme Gradient */
 .theme-gradient {
-    background: linear-gradient(95deg, var(--color-primary) 15%, var(--color-tertiary) 45%, var(--color-pink) 75%, var(--color-secondary) 100%) 98% / 200% 100%;
+    background: linear-gradient(120deg, var(--color-primary) 0%, var(--color-tertiary) 32%, var(--color-yellow) 69%, var(--color-secondary) 100%);
     text-transform: capitalize;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    &_animation {
+        background-size: 200% 200%;
+        animation: gradient 15s ease infinite;
+    }
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 .bg-theme-gradient {
@@ -210,7 +225,7 @@
 }
 
 .bg-color-pink {
-    background-color: var(--color-pink) !important;
+    background-color: var(--color-yellow) !important;
 }
 
 .bg-color-primary-darker {
@@ -226,7 +241,7 @@
 }
 
 .bg-color-pink-darker {
-    background-color: var(--color-pink-darker) !important;
+    background-color: var(--color-yellow-darker) !important;
 }
 
 .bg-color-heading {
