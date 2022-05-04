@@ -1,5 +1,12 @@
 {
  "name": "Forced Fund",
+ "background_color": "#ffffff",
+ "display": "standalone",
+ "orientation": "any",
+ "scope": "/",
+ "short_name": "Forced Fund",
+ "start_url": "/",
+ "theme_color": "#ffffff",
  "icons": [
   {
    "src": "\/android-icon-36x36.png",
