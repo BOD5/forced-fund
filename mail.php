@@ -1,74 +1,75 @@
 <?php
-$name = trim($_POST['contact-name']);
-$phone = trim($_POST['contact-phone']);
-$email = trim($_POST['contact-email']);
-$message = trim($_POST['contact-message']);
 
-if ($name == "") {
+// Input
+$name = getInput('contact-name');
+$phone = getInput('contact-phone');
+$email = getInput('contact-email');
+$subject = getInput('subject');
+$message = getInput('contact-message');
+
+// Validation
+if (empty($name)) {
     $msg['err'] = "\n Name can not be empty!";
     $msg['field'] = "contact-name";
-    $msg['code'] = FALSE;
-} else if ($phone == "") {
+} else if (empty($phone)) {
     $msg['err'] = "\n Phone number can not be empty!";
     $msg['field'] = "contact-phone";
-    $msg['code'] = FALSE;
 } else if (!preg_match("/^[0-9 \\-\\+]{4,17}$/i", trim($phone))) {
     $msg['err'] = "\n Please put a valid phone number!";
     $msg['field'] = "contact-phone";
-    $msg['code'] = FALSE;
-} else if ($email == "") {
+} else if (empty($email)) {
     $msg['err'] = "\n Email can not be empty!";
     $msg['field'] = "contact-email";
-    $msg['code'] = FALSE;
 } else if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
     $msg['err'] = "\n Please put a valid email address!";
     $msg['field'] = "contact-email";
-    $msg['code'] = FALSE;
-} else if ($message == "") {
+} else if (empty($message)) {
     $msg['err'] = "\n Message can not be empty!";
     $msg['field'] = "contact-message";
-    $msg['code'] = FALSE;
-} else {
-    // Email
-    $to = 'nipabali@gmail.com';
-    $subject = 'Doob Contact Query';
-
-    $_message = '<html><head></head><body>';
-    $_message .= '<p>Name: ' . $name . '</p>';
-    $_message .= '<p>Phone: ' . $phone . '</p>';
-    $_message .= '<p>Email: ' . $email . '</p>';
-    $_message .= '<p>Message: ' . $message . '</p>';
-    $_message .= '</body></html>';
-
-    $headers = 'MIME-Version: 1.0' . "\r\n";
-    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-    $headers .= 'From:  Doob <nipabali@gmail.com>' . "\r\n";
-    $headers .= 'cc: nipabali@gmail.com' . "\r\n";
-    $headers .= 'bcc: nipabali@gmail.com' . "\r\n";
-
-    mail($to, $subject, $_message, $headers, '-f nipabali@gmail.com');
-
-    // Telegram
-    $_messageTg = "New message from!\n\n";
-    $_messageTg .= "Name: $name\n";
-    $_messageTg .= "Phone: $phone\n";
-    $_messageTg .= "Email: $email\n";
-    $_messageTg .= "Subject: $subject\n";
-    $_messageTg .= "Message: $message";
-
-    tg($_messageTg);
-
-    $msg['success'] = "\n Email has been sent successfully.";
-    $msg['code'] = TRUE;
+} else if (empty($subject)) {
+    $msg['err'] = "\n Topic can not be empty!";
+    $msg['field'] = "contact-message";
 }
+
+if (isset($msg['err'])) {
+    $msg['code'] = FALSE;
+    echo json_encode($msg);
+    exit();
+}
+
+// Telegram message
+$tgMessage = "<strong>[New message!]</strong>\n\n";
+$tgMessage .= "Name: $name\n";
+$tgMessage .= "Phone: $phone\n";
+$tgMessage .= "Email: $email\n";
+$tgMessage .= "Subject: $subject\n";
+$tgMessage .= "Message: $message";
+
+tg($tgMessage);
+
+$msg['success'] = "\n Email has been sent successfully.";
+$msg['code'] = TRUE;
+
 echo json_encode($msg);
+exit();
 
 
-function tg($msg)
+
+// Functions
+function tg($message)
 {
     $apiBase = 'https://api.telegram.org';
     $bot = '5371573526:AAFOPtnaRn3HFj6BbKYo5JSpwLncNiy1m_A';
     $chatId = '-619416108';
 
-    fopen("$apiBase/bot$bot/sendMessage?chat_id=$chatId&parse_mode=html&text=" . urlencode($msg), 'r');
+    file_get_contents(
+        "$apiBase/bot$bot/sendMessage?chat_id=$chatId&parse_mode=html&text=" . urlencode($message),
+        'r'
+    );
+}
+
+function getInput($name) {
+    return isset($_POST[$name])
+        ? strip_tags(trim($_POST[$name]))
+        : '';
 }
