@@ -35,9 +35,6 @@ if (empty($name)) {
 } else if (empty($message)) {
     $msg['err'] = "\n Message can not be empty!";
     $msg['field'] = "contact-message";
-} else if (empty($subject)) {
-    $msg['err'] = "\n Topic can not be empty!";
-    $msg['field'] = "contact-message";
 }
 
 if (isset($msg['err'])) {
