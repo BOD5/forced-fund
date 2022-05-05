@@ -1,5 +1,14 @@
 <?php
 
+if (!captcha($_POST['captcha'])) {
+    $msg['err'] = "\n Invalid captcha!";
+    $msg['field'] = "contact-message";
+    $msg['code'] = FALSE;
+
+    echo json_encode($msg);
+    exit();
+}
+
 // Input
 $name = getInput('contact-name');
 $phone = getInput('contact-phone');
@@ -64,6 +73,31 @@ function tg($message)
         "$apiBase/bot$bot/sendMessage?chat_id=$chatId&parse_mode=html&text=" . urlencode($message),
         'r'
     );
+}
+
+function captcha($captcha) {
+    $secret = '6Lf5KMUfAAAAAPczM86UH3bu9BOr_dvcPNAhOWyk';
+
+    $ch = curl_init();
+
+    curl_setopt($ch,CURLOPT_URL, "https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$captcha&remoteip=" . $_SERVER['REMOTE_ADDR']);
+    curl_setopt($ch,CURLOPT_POST, true);
+
+    curl_setopt($ch,CURLOPT_RETURNTRANSFER, true);
+
+    $response = curl_exec($ch);
+
+    if (empty($response)) {
+        return false;
+    }
+
+    $responseData = json_decode($response, true);
+
+    if ($responseData['success']) {
+        return true;
+    }
+
+    return false;
 }
 
 function getInput($name) {
