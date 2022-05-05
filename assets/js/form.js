@@ -33,11 +33,13 @@ document.forms["contact-form"].addEventListener("submit", (e) => {
     const elem = e.target[`contact-${field.title}`]
     if (field.check(elem.value)) {
       err = true;
-      elem.classList.add('error');
-      const errMsg = document.createElement("p");
-      errMsg.classList.add('err-msg');
-      errMsg.innerText = field.message;
-      elem.parentNode.appendChild(errMsg);
+      if (!elem.classList.contains('error')) {
+        elem.classList.add('error');
+        const errMsg = document.createElement("p");
+        errMsg.classList.add('err-msg');
+        errMsg.innerText = field.message;
+        elem.parentNode.appendChild(errMsg);
+      }
     }
   })
   if(err) {
