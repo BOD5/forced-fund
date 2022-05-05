@@ -14,13 +14,13 @@ if (empty($name)) {
 } else if (empty($phone)) {
     $msg['err'] = "\n Phone number can not be empty!";
     $msg['field'] = "contact-phone";
-} else if (!preg_match("/^[0-9 \\-\\+]{4,17}$/i", trim($phone))) {
+} else if (!preg_match("/^[0-9 \\-\\+]{4,17}$/i", $phone)) {
     $msg['err'] = "\n Please put a valid phone number!";
     $msg['field'] = "contact-phone";
 } else if (empty($email)) {
     $msg['err'] = "\n Email can not be empty!";
     $msg['field'] = "contact-email";
-} else if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+} else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $msg['err'] = "\n Please put a valid email address!";
     $msg['field'] = "contact-email";
 } else if (empty($message)) {
@@ -70,6 +70,6 @@ function tg($message)
 
 function getInput($name) {
     return isset($_POST[$name])
-        ? strip_tags(trim($_POST[$name]))
+        ? trim(strip_tags($_POST[$name]))
         : '';
 }
