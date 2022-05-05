@@ -1,13 +1,13 @@
 <?php
 
-if (!captcha($_POST['captcha'])) {
+/*if (!captcha($_POST['captcha'])) {
     $msg['err'] = "\n Invalid captcha!";
     $msg['field'] = "contact-message";
     $msg['code'] = FALSE;
 
     echo json_encode($msg);
     exit();
-}
+}*/
 
 // Input
 $name = getInput('contact-name');
