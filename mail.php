@@ -39,11 +39,11 @@ if (isset($msg['err'])) {
 
 // Telegram message
 $tgMessage = "<strong>[New message!]</strong>\n\n";
-$tgMessage .= "Name: $name\n";
-$tgMessage .= "Phone: $phone\n";
-$tgMessage .= "Email: $email\n";
-$tgMessage .= "Subject: $subject\n";
-$tgMessage .= "Message: $message";
+$tgMessage .= "<strong>Name</strong>: $name\n";
+$tgMessage .= "<strong>Phone</strong>: $phone\n";
+$tgMessage .= "<strong>Email</strong>: $email\n";
+$tgMessage .= "<strong>Subject</strong>: $subject\n";
+$tgMessage .= "<strong>Message</strong>: $message";
 
 tg($tgMessage);
 
@@ -52,8 +52,6 @@ $msg['code'] = TRUE;
 
 echo json_encode($msg);
 exit();
-
-
 
 // Functions
 function tg($message)
